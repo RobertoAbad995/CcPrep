@@ -9,13 +9,12 @@ import SwiftUI
 
 struct PeopleAt: View {
     
-//    @EnvironmentObject var vm : DemoViewModel
-    @ObservedObject var vm : DemoViewModel = DemoViewModel()
+    @EnvironmentObject var vm : DemoViewModel
+//    @ObservedObject var vm : DemoViewModel = DemoViewModel()
     @Environment(\.presentationMode) var mode
     var title: String
     
     var body: some View {
-        NavigationView {
             
                 
                 VStack (spacing: 1) {
@@ -39,26 +38,16 @@ struct PeopleAt: View {
                             .padding([.bottom, .trailing], 5)
                     }
                     .background(Color.pink)
-                    .frame(width: .infinity, height: 50)
+                    .frame(height: 50)
                     
                    Image("pub")
                         .resizable()
-                        .frame(width: .infinity, height: 350)
-
                     
                     CustomList(typeList: .people, items: vm.users)
                 }//END STACKVIEW
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(true)
-            .background(Color("primary"))
-            .foregroundColor(.white)
-            
-            
-            
-            
-        }//END NAVIGATION VIEW
-        .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarBackButtonHidden(true)
+                .background(Color("primary"))
+                .foregroundColor(.white)
+                .navigationBarHidden(true)
     }
 }
 
