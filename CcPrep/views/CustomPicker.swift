@@ -31,7 +31,7 @@ struct CustomPicker: View {
                             .padding()
                             .frame(height: 30)
                             .id(index)
-                            .border(width: self.index == index ? 3 : 0, edges: [.bottom, .leading], color: Color("primary"))
+                            .border(width: self.index == index ? 3 : 0, edges: [.bottom], color: Color("primary"))
                             .onTapGesture{
                                 self.index = index
                             }
