@@ -41,7 +41,6 @@ struct PeopleAt: View {
                     .background(Color.pink)
                     .frame(width: .infinity, height: 50)
                     
-                    //change the map for an image
                    Image("pub")
                         .resizable()
                         .frame(width: .infinity, height: 350)
